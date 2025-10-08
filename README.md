@@ -27,7 +27,34 @@ Git is a widely used version control system designed to track changes made to fi
 I will primarily go over how to use the web based GitHub service as well as use git locally via command line. However, if you are not comfortable with using command line, there is also a [GitHub desktop application](https://desktop.github.com/download/). Although that is outside the scope of this tutorial, many of the features of the desktop app are similar to the web based version. Additionally, many IDEs provide GitHub integration and have some visual interfaces for interacting with git.
 
 ### Creating a repository
+The first thing you need to do to use git and GitHub is to create a repository. On the GitHub website, you can create a new repository by going to the ```Repositories``` tab in your account and clicking on the ```New``` button.
 
+<img src= images/repository-2.png>
+<img src = images/repository.png>
+
+<br>
+
+This will open a new page where you can customise details of your repository, such as name and description. The name of the repostory must be unique, but GitHub will check if the name you have chosen is available.
+
+<img src = images/repository-3.png>
+
+<br>
+
+You can also edit some other details, such as whether the repository should be public, add a [license](#license), a [.gitignore](#gitignore) or a [readme](#readme) file. 
+
+<img src = images/repository-4.png>
+
+<br>
+
+Once you've created your repository, you can [clone](#cloning-a-repository) it on your computer to work on it directly from there.
+
+You an also initialise any folder (new or existing) into a git repository via command line. Navigate to the desired folder in a terminal and use the command:
+
+```function test()
+git init
+```
+
+You can add any existing local repository to GitHub, but I will not discuss that here. In most cases, it's easier to simply create the remote repository first on the GitHub website and then clone it to you local computer. However, if you need to add an existing repository to GitHub, you can read more about it [here](https://docs.github.com/en/get-started/git-basics/managing-remote-repositories?platform=linux)
 
 ### Adding files
 In order for git to track a file, it must first be added to the repository. When creating a file directly on GitHub, it will automatically be added to the repository. However, if you create a file locally, you must first add it by opening a terminal and using the ```git add``` command.
@@ -81,7 +108,7 @@ It is also possible to commit multiple files at once.
     git commit your_file_name your_other_file_name -m "Your commit message"
 ```
 
-Or commit all changed files in the repository, although this is typically not recommended. It is best practice to keep commits small and frequent so you can easily track each change and the purpose of that change. This is especially important for colaborative code where someone else might need to understand what changes you made and why (but it is also incredibly useful for your future self!). 
+Or commit all changed files in the repository, although this is typically not recommended. It is best practice to keep commits small and frequent so you can easily track each change and the purpose of that change. This is especially important for colaborative code where someone else might need to understand what changes you made and why (but it is also incredibly useful for your future self!).
 
 ```function test()
     git commit . -m "Your commit message"
@@ -96,7 +123,7 @@ To push and pull, use the following commands. Make sure you are in the directory
 git pull
 ```
 ```function test()
-git push
+git push origin main
 ```
 
 Alternatively, you can use the full path to your repository to push/pull from a different location.
@@ -105,13 +132,13 @@ Alternatively, you can use the full path to your repository to push/pull from a 
 git pull /path/to/your/repository
 ```
 ```function test()
-git push /path/to/your/repository
+git push /path/to/your/repository origin main
 ```
 
 It is also possible to only push some files.
 
 ```function test()
-git push your_file_name
+git push your_file_name origin main
 ```
 
 ### Branches
