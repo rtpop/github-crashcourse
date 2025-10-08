@@ -15,6 +15,9 @@ https://docs.google.com/presentation/d/1pOj41FHSDqTLEfji0Nqh9-PoDVcq861yObhCFfQM
     - [Branches](#branches)
     - [Cloning a repository](#cloning-a-repository)
     - [Forking a repository](#forking-a-repository)
+  - [Elements of a git repository](#elements-of-a-git-repository)
+    - [.gitignore](#gitignore)
+    - [License](#license)
 
 ## Git and GitHub basics
 Git is a widely used version control system designed to track changes made to files within a repository. It was primarily designed for programming, but it can be used to version control any document. Services such as GitHub are a great way of collaborating on projects or even backing up your code or other important documents while tracking any changes made for future reference. GitHub has a [comprehensive tutorial](https://docs.github.com/en/get-started/start-your-journey) on how to use git with GitHub, along with some practical exercises. Here, I will only briefly describe the main concepts. I will primarily go over how to use the web based GitHub service as well as use git locally via command line. However, if you are not comfortable with using command line, there is also a [GitHub desktop application](https://desktop.github.com/download/). Although that is outside the scope of this tutorial, many of the features of the desktop app are similar to the web based version.
@@ -36,7 +39,21 @@ git add your_file_name your_other_file_name
 git add .
 ```
 
-You must [commit](#committing) added files as you would any other change.
+You must [commit](#committing) added files as you would any other change. If you want a file (or folder) not to be tracked by git, you can add it to [.gitignore](#gitignore).
+
+It is also possible to remove a file from the tracked files if you do not want it to be tracked any longer. You can check files currently tracked by git with
+
+```function test()
+git status
+```
+
+And remove files with
+
+```function test()
+git rm --cached your_file_name
+```
+
+Note that this will not remove the file itself, it will only remove the tracking of the file. 
 
 ### Committing
 Commits are the backbone of git and are how we can track changes made to any file. Every time you make a new commit, you have to include a commit message. Each commit is assigned a unique ID, so it can be found at any point and the changes committed in that commit can be seen. If you edit a file on GitHub directly, it will automatically commit when saving changes and prompt you for a commit message. You can also commit manually by pressing the green ```Commit changes``` button.
@@ -128,6 +145,15 @@ This will take you to a forking page where you can customise the name of your re
 <img src = images/fork-2.png>
 
 <br>
+
+## Elements of a git repository
+Every git repository has a few impotent elements that it is good to be aware of. These are not necessary for the repository to function, but they are good practice to have and very useful.
+
+### .gitignore
+The ```.gitignore``` file tells git which files and folders it should ignore. This is useful for folders containing data, images, caches and other similar files that either do not change over time or are temporary nd it is not important to track them. When creating a repository through GitHub, it gives you the option to create a ```.gitignore``` file from the start and even provides some presets with commonly ignored files and folders for various programming languages. However, you can easily create a ```.gitignore``` file at any point by simply making a new text file and naming it ```.gitignore```. Bear in mind that if you [added](#adding-files) a file to git before adding it to ```.gitignore```, you will first need to remove it from the tracked files before git will ignore it.
+
+### License
+The license tells other people what they can legally do with your code or other intellectual property in your repository. This is iportant for any public repositories. When creating a repository on GitHub, it will give you the option to add a license and gives you the option to choose your preferred license. For example, this repository is under an MIT license. This is the simplest and most permissive open source license. it allows anyone to use, modify and otherwise do what they want with the contents of this repository for personal or commercial use, without having to give me any credit. I chose this license as this is an educational repository and I want it to be as freely and widely accessible as possible. However, there are other more restrictive licenses. It is important to add a license to any public repository and choose the appropriate license for your code or other documents. You can read more about licenses [here](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository).
 
 Author:
 Romana Pop
