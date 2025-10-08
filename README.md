@@ -1,5 +1,5 @@
 # Git and GitHub crash course
-This is a repository for the practical component of a git & GitHub course. This includes a short presentation of gi and the main features of git, as well as a more detailed guide of the basics of git and GitHub. 
+This is a repository for the practical component of a git & GitHub course. This includes a short presentation of git and the main features of git, as well as a more detailed guide of the basics of git and GitHub. 
 
 Slides:
 https://docs.google.com/presentation/d/1pOj41FHSDqTLEfji0Nqh9-PoDVcq861yObhCFfQM0TU/edit?usp=sharing
@@ -9,6 +9,7 @@ https://docs.google.com/presentation/d/1pOj41FHSDqTLEfji0Nqh9-PoDVcq861yObhCFfQM
 - [Git and GitHub crash course](#git-and-github-crash-course)
 - [Contents](#contents)
   - [Git and GitHub basics](#git-and-github-basics)
+    - [Creating a repository](#creating-a-repository)
     - [Adding files](#adding-files)
     - [Committing](#committing)
     - [Pushing and pulling](#pushing-and-pulling)
@@ -24,6 +25,9 @@ https://docs.google.com/presentation/d/1pOj41FHSDqTLEfji0Nqh9-PoDVcq861yObhCFfQM
 Git is a widely used version control system designed to track changes made to files within a repository. It was primarily designed for programming, but it can be used to version control any document. Services such as GitHub are a great way of collaborating on projects or even backing up your code or other important documents while tracking any changes made for future reference. GitHub has a [comprehensive tutorial](https://docs.github.com/en/get-started/start-your-journey) on how to use git with GitHub, along with some practical exercises. Here, I will only briefly describe the main concepts. 
 
 I will primarily go over how to use the web based GitHub service as well as use git locally via command line. However, if you are not comfortable with using command line, there is also a [GitHub desktop application](https://desktop.github.com/download/). Although that is outside the scope of this tutorial, many of the features of the desktop app are similar to the web based version. Additionally, many IDEs provide GitHub integration and have some visual interfaces for interacting with git.
+
+### Creating a repository
+
 
 ### Adding files
 In order for git to track a file, it must first be added to the repository. When creating a file directly on GitHub, it will automatically be added to the repository. However, if you create a file locally, you must first add it by opening a terminal and using the ```git add``` command.
@@ -111,7 +115,34 @@ git push your_file_name
 ```
 
 ### Branches
-Branches are 
+Branches are a way of diverging from the main "state@ of a file without ovewriting or changing it. In essence, it allows us to modify code or documents in our repository without having to overwrite anything that we have already written. This is useful for testing out new code features before including them in the main code base. It is also useful when collaboarting. Allowing multiple people to work on the same documents simultaneously without having to worry if their changes conflic with one another (more or less). Depending on the size of the project, [repository forking](#forking-a-repository) might be a better alternative for this. 
+
+When [creating a git repository](#creating-a-repository), a branch is automatically created. By convention, this is typically called ```main```. You can create additional branches for various features. On the GitHub website, you can see the current branches that exist in your repository in the top left of the main page.
+
+<img src = images/branches.png>
+
+If you type the name of a branch that does not exist in the search bar, you can create a new branch with that name. To switch between branchs, simply select the branch you want from the dropdown menu.
+
+<img src = images/branches-2.png>
+
+<br>
+
+To create a new branch via command line, use:
+
+```function test()
+git branch your_branch_name
+```
+
+To switch to a different branch, use:
+
+```function test()
+git checkout your_branch_name
+```
+
+
+You can set some of your branches (typically this would be the main branch") as "protected" branches. This means that only the administrator(s) of the repository can push directly to or merge with this branch.
+
+There are many other useful features of branches that are outside the scope of this tutorial, but you can read more about them [here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches).
 
 ### Cloning a repository
 Cloning a repository means creating a copy of a remote repository on your local machine and linking it to the remote repository, so that any changes made can be communicated between the local and remote repositories via pushing and pulling. You can clone any public repository or private repository you have access to, but you will only be able to
