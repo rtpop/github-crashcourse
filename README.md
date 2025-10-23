@@ -128,7 +128,29 @@ Finally, you can commit all changed files in the repository, although this is ty
 ```
 
 ### Reverting to a previous commit
+One of the great things about git is that you can restore your files to a previous version at any time. Unfortunately, this is not something that can be easily done on the GitHub website. However, you can do this in the command line or in [GitHub Desktop](https://docs.github.com/en/desktop/managing-commits/reverting-a-commit-in-github-desktop).
 
+To do it via the command line, you must first identify the commit you want to revert to. Each commit will have a unique ID assigned to it when it is created. You can see a list of all your commits, their IDs and their commit messages by using the command:
+
+```function test()
+git log --oneline
+```
+
+An alternative is to go to your repository on GitHub and check the history of the file that you want to revert. To do this, open your file on GitHub and click on the "History" button in the top right corner.
+
+<img src= images/revert-1.png>
+<br>
+
+This will open a list of all the commits that were made for that file, along with their commit messages and IDs (highlighted in red).
+
+<img src = images/revert-2.png>
+<br>
+
+Once you have identified the commit you want to revert to, you can revert to that commit with the following command:
+
+```function test()
+git revert your_commit_id
+```
 
 ### Pushing and pulling
 Pushing and pulling is how we can sync the local and remote repositories. We can push any changes we make locally to the remote repository only if they have been committed first. When pushing an pulling, git will check for conflicts between the loal and remote versions to avoid overwriting information. If it cannot automatically resolve the differences between the two versions without any loss of information, it will require you to manually resolve it by choosing which version to keep. This is especially important when working in collaboration and this is why using [branches](#branches) is important. 
