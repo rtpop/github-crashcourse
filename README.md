@@ -12,6 +12,7 @@ https://docs.google.com/presentation/d/1pOj41FHSDqTLEfji0Nqh9-PoDVcq861yObhCFfQM
     - [Creating a repository](#creating-a-repository)
     - [Adding files](#adding-files)
     - [Committing](#committing)
+    - [Reverting to a previous commit](#reverting-to-a-previous-commit)
     - [Pushing and pulling](#pushing-and-pulling)
     - [Branches](#branches)
     - [Cloning a repository](#cloning-a-repository)
@@ -108,11 +109,26 @@ It is also possible to commit multiple files at once.
     git commit your_file_name your_other_file_name -m "Your commit message"
 ```
 
-Or commit all changed files in the repository, although this is typically not recommended. It is best practice to keep commits small and frequent so you can easily track each change and the purpose of that change. This is especially important for colaborative code where someone else might need to understand what changes you made and why (but it is also incredibly useful for your future self!).
+You an also commit an entire folder by specifyinf the folder name instead of the file name.
+
+```function test()
+    git commit your_folder_name -m "Your commit message"
+```
+
+Or if you want to commit the folder you are currently in:
 
 ```function test()
     git commit . -m "Your commit message"
 ```
+
+Finally, you can commit all changed files in the repository, although this is typically not recommended. It is best practice to keep commits small and frequent so you can easily track each change and the purpose of that change. This is especially important for colaborative code where someone else might need to understand what changes you made and why (but it is also incredibly useful for your future self!).
+
+```function test()
+    git commit -m "Your commit message"
+```
+
+### Reverting to a previous commit
+
 
 ### Pushing and pulling
 Pushing and pulling is how we can sync the local and remote repositories. We can push any changes we make locally to the remote repository only if they have been committed first. When pushing an pulling, git will check for conflicts between the loal and remote versions to avoid overwriting information. If it cannot automatically resolve the differences between the two versions without any loss of information, it will require you to manually resolve it by choosing which version to keep. This is especially important when working in collaboration and this is why using [branches](#branches) is important. 
