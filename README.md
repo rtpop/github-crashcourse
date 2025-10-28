@@ -17,6 +17,8 @@ https://docs.google.com/presentation/d/1pOj41FHSDqTLEfji0Nqh9-PoDVcq861yObhCFfQM
     - [Branches](#branches)
     - [Cloning a repository](#cloning-a-repository)
     - [Forking a repository](#forking-a-repository)
+    - [Pull requests](#pull-requests)
+    - [Merging](#merging)
   - [Elements of a GitHub repository](#elements-of-a-github-repository)
     - [.gitignore](#gitignore)
     - [LICENSE](#license)
@@ -245,11 +247,39 @@ This will take you to a forking page where you can customise the name of your re
 
 <br>
 
+### Pull requests
+A pull request is a request to [merge](#merging) two branches (or two forked repositories). When creating a pull request, the owner or an administrator of the repositiry gets notified and must approve it before the merge is performed. When reviewing a pull request, you can see all the differences between the current version and the incoming version. It is also possible to only partially accept the changes made by a pull request. 
+
+On GitHub, when looking at a branch, you can easily see if the branch is ahead or behind the main branch.
+
+<img src = images/pull-request.png>
+
+<br>
+
+You can click on the highlighted text to see a comparison of the two branches. This is also where you can create a pull request. GitHub will also check if the branches can be automatically merged, and this will be shown at the top. If they cannot be automatically merged, the merge conflicts will need to be manually resolved. you can read more about that in the [merging](#merging) section.
+
+<img src = "images/pull-request-2.png">
+
+<br>
+
+When you click on the "Create pull request" button, it will take you to a pull request creation page. Here you can give your request a title and description.
+
+<img src = "images/pull-request-3.png">
+
+<br>
+
+Open pull requests can be found in the "Pull requests" tab. where they can be reviewed and resolved. You can read more about pull requests [here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests).
+
+<img src = "images/pull-request-4.png">
+
+### Merging
+
+
 ## Elements of a GitHub repository
 Every git repository has a few impotent elements that it is good to be aware of. These are not necessary for the repository to function, but they are good practice to have and very useful.
 
 ### .gitignore
-The ```.gitignore``` file tells git which files and folders it should ignore. This is useful for folders containing data, images, caches and other similar files that either do not change over time or are temporary nd it is not important to track them. When creating a repository through GitHub, it gives you the option to create a ```.gitignore``` file from the start and even provides some presets with commonly ignored files and folders for various programming languages. However, you can easily create a ```.gitignore``` file at any point by simply making a new text file and naming it ```.gitignore```. Bear in mind that if you [added](#adding-files) a file to git before adding it to ```.gitignore```, you will first need to remove it from the tracked files before git will ignore it.
+The ```.gitignore``` file tells git which files and folders it should ignore. This is useful for folders containing data, images, caches and other similar files that either do not change over time or are temporary and it is not important to track them. When creating a repository through GitHub, it gives you the option to create a ```.gitignore``` file from the start and even provides some presets with commonly ignored files and folders for various programming languages. However, you can easily create a ```.gitignore``` file at any point by simply making a new text file and naming it ```.gitignore```. Bear in mind that if you [added](#adding-files) a file to git before adding it to ```.gitignore```, you will first need to remove it from the tracked files before git will ignore it.
 
 ### LICENSE
 The license tells other people what they can legally do with your code or other intellectual property in your repository. It also informs of any liability or warranty that comes with the contents of your repository. This is iportant for any public repositories. When creating a repository on GitHub, it will give you the option to add a license and gives you the option to choose your preferred license. You can also create a license yourself as this is simply a text file that contains the license informatioin. However, it is generally much easier to choose an existing license.
